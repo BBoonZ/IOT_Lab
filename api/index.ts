@@ -5,19 +5,23 @@ import { handle } from "hono/vercel";
 
 const app = new Hono().basePath("/api");
 
+app.get('/', (c) => {
+  return c.text('Hello Thailand!')
+})
+
 app.use(
-    "*",
-    cors({
-        origin: "http://localhost:5173",
-        allowHeaders: ["Content-Type"],
-        allowMethods: ["GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS"],
-    })
+  "*",
+  cors({
+    origin: "http://localhost:5173",
+    allowHeaders: ["Content-Type"],
+    allowMethods: ["GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS"],
+  })
 );
 
 app.route("/v1", apiRouter);
 
 export const config = {
-    runtime: "edge",
+  runtime: "edge",
 };
 
 export default handle(app);

@@ -9,7 +9,7 @@
   },
   "dependencies": {
     "@hono/node-server": "^1.16.0",
-    "@hono/zod-validator": "^0.7.1",
+    "@hono/zod-validator": "^0.7.2",
     "@types/pg": "^8.15.4",
     "@vercel/postgres": "^0.10.0",
     "dayjs": "^1.11.13",
